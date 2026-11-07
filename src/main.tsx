@@ -10,8 +10,8 @@ import ErrorBoundary from './components/ErrorBoundary.tsx'
 const queryClient = new QueryClient({
   defaultOptions: {
     queries: {
-      staleTime: 1000 * 60, // 1 minuto sin volver a pedir los mismos datos
-      retry: 1, // 1 reintento en fallos
+      staleTime: 1000 * 60,
+      retry: 1,
       refetchOnWindowFocus: false,
     },
     mutations: {
@@ -32,3 +32,4 @@ createRoot(document.getElementById('root')!).render(
     </ErrorBoundary>
   </StrictMode>,
 )
+

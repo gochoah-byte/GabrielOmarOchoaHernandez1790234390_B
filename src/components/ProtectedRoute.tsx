@@ -1,9 +1,6 @@
-import { Outlet } from 'react-router-dom'
-
-// TODO 1.4 (Autenticación): si NO hay accessToken en el store, redirija a /login con <Navigate>.
-// Si hay sesión, muestre las rutas hijas con <Outlet />.
-function ProtectedRoute() {
-  return <Outlet />
+import { Navigate, Outlet } from 'react-router-dom'
+import { useAuthStore } from '../store/authStore'
+export default function ProtectedRoute() {
+ const token = useAuthStore(s=>s.accessToken)
+ return token ? <Outlet /> : <Navigate to="/login" replace />
 }
-
-export default ProtectedRoute

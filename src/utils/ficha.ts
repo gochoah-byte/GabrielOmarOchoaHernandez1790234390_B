@@ -1,6 +1,4 @@
 import type { Recipe } from '../types'
-
-// Arma el texto de la ficha de una receta. Ya viene hecha: usted solo crea el Blob y lo descarga.
 export function fichaText(item: Recipe): string {
   return [
     item.name,
